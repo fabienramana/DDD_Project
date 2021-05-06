@@ -1,10 +1,15 @@
 package model;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class Club {
     private String name;
     private List<Player> recommandedPlayers;
+    
+    public Club(){
+        this.recommandedPlayers = new ArrayList<>();
+    }
 
 
     public String getName() {

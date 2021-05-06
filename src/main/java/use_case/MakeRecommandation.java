@@ -18,8 +18,10 @@ public class MakeRecommandation {
     
     public void recommandPlayer(String playerId, String clubId){
         Club club = clubs.findById(clubId);
-        Player player = players.findById(playerId);               
+        Player player = players.findById(playerId); 
+        
         club.addRecommendedPlayer(player);
+        
         clubs.save(club);
     }
 }

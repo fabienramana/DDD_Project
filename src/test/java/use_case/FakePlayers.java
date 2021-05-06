@@ -13,15 +13,14 @@ public class FakePlayers implements PlayerRepository {
     public FakePlayers() {
         players = new HashMap<>();
 
-        Player zidane = new Player();
-        zidane.setName("Zidane");
+        Player zidane = new Player("Zidane", 180,80,"milieu");
         players.put("1", zidane);
 
-        Player henry = new Player();
+        Player henry = new Player("Henry", 185,85,"attaquant");
         henry.setName("Henry");
         players.put("2", henry);
 
-        Player neymar = new Player();
+        Player neymar = new Player("Neymar", 175,70,"milieu");
         neymar.setName("Neymar");
         players.put("3", neymar);
 

@@ -6,7 +6,7 @@ public class CreateProfile {
 
     private final PlayerRepository players;
     
-    CreateProfile(PlayerRepository players){
+    public CreateProfile(PlayerRepository players){
         this.players = players;
     }
     

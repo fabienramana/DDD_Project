@@ -7,16 +7,19 @@ import java.util.List;
 public class Session {
 	
 	private String date;
+	private String status;
 	private List<Player> players;
 	private List<Scoot> scoots;
 	private List<Coach> coaches;
 	
-	public Session(String date, List<Player> players, List<Scoot> scoots, List<Coach> coaches) {
+	public Session(String date, List<Player> players, List<Scoot> scoots, List<Coach> coaches, String status) {
 		super();
 		this.date = date;
+		this.status = status;
 		this.players = players;
 		this.scoots = scoots;
 		this.coaches = coaches;
+
 	}
 
 	public Session() {

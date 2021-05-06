@@ -38,7 +38,9 @@ public class OrganizeRecruitementSessionTest {
 		String coachId = "1";
         String playerId = "1";
         String scootId = "1";
-		
+
+        String status = "Maintenu";
+
 		String date = "28/06/2021 12h";
 		Coach coach = this.coaches.findById(coachId);
 		Scoot scoot = this.scoots.findById(scootId);
@@ -53,7 +55,7 @@ public class OrganizeRecruitementSessionTest {
 	
 
 		OrganizeRecruitementSession o = new OrganizeRecruitementSession(sessions);
-		Session s = o.OrganizeSession(date, players, scoots, coaches);
+		Session s = o.OrganizeSession(date, players, scoots, coaches, status);
 		
 		assertEquals(s.getPlayers().get(0).getName(), player.getName());
 	}

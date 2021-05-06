@@ -16,8 +16,8 @@ public class OrganizeRecruitementSession {
 		this.sessions = sessions;
 	}
 	
-	public Session OrganizeSession(String date, List<Player> players, List<Scoot> scoots, List<Coach> coaches) {
-		Session session = new Session(date, players, scoots, coaches);
+	public Session OrganizeSession(String date, List<Player> players, List<Scoot> scoots, List<Coach> coaches, String status) {
+		Session session = new Session(date, players, scoots, coaches, status);
 		return session;
 	}
 }

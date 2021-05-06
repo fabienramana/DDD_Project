@@ -30,4 +30,9 @@ public class FakePlayers implements PlayerRepository {
     public Player findById(String playerId) {
         return players.get(playerId);
     }
+    
+    @Override
+    public void save(Player player){
+        
+    }
 }

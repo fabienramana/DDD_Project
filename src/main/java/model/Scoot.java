@@ -3,7 +3,11 @@ package model;
 public class Scoot {
     public String name;
 
-    public String getName() {
+    public Scoot(String name) {
+		this.name = name;
+	}
+
+	public String getName() {
         return name;
     }
 

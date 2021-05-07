@@ -3,6 +3,7 @@ package model;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 
 public class WearableColis {
 
@@ -21,9 +22,7 @@ public class WearableColis {
     public WearableColis(){}
     
     public WearableColis createWearableColisFromSession(Session session) throws Exception {
-        if(session.getStatus() != "Maintenu"){
-            throw new Exception("Session non maintenu -> Pas de colis à livrer");
-        }
+        session.isMaintained();
 
         LocalDate dateReceived = session.getDate();
         LocalDate dateSent = session.getDateToSendWearableColis();
@@ -64,5 +63,21 @@ public class WearableColis {
 
     public void setSession(Session session) {
         this.session = session;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        WearableColis that = (WearableColis) o;
+        return Objects.equals(wearables, that.wearables) &&
+                Objects.equals(dateSent, that.dateSent) &&
+                Objects.equals(dateReceived, that.dateReceived) &&
+                Objects.equals(session, that.session);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(wearables, dateSent, dateReceived, session);
     }
 }

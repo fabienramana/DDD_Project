@@ -2,6 +2,7 @@ package model;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 
 public class Wearable {
     private String id;
@@ -44,5 +45,19 @@ public class Wearable {
             }
         }
         return wearablesToSend;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Wearable wearable = (Wearable) o;
+        return Objects.equals(id, wearable.id) &&
+                Objects.equals(type, wearable.type);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(id, type);
     }
 }

@@ -71,4 +71,11 @@ public class Session {
 	public int getNumberOfPlayersInSession(){
 		return players.size();
 	}
+	
+	public Boolean isMaintained() throws Exception {
+		if(status != "Maintenu"){
+			throw new Exception("Session non maintenu -> Pas de colis à livrer");
+		}
+		return true;
+	}
 }

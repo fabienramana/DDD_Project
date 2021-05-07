@@ -1,6 +1,7 @@
 package model;
 
 import java.time.LocalDate;
+import java.util.ArrayList;
 import java.util.List;
 
 public class WearableColis {
@@ -15,6 +16,22 @@ public class WearableColis {
         this.dateSent = dateSent;
         this.dateReceived = dateReceived;
         this.session = session;
+    }
+    
+    public WearableColis(){}
+    
+    public WearableColis createWearableColisFromSession(Session session) throws Exception {
+        if(session.getStatus() != "Maintenu"){
+            throw new Exception("Session non maintenu -> Pas de colis à livrer");
+        }
+
+        LocalDate dateReceived = session.getDate();
+        LocalDate dateSent = session.getDateToSendWearableColis();
+        int numberOfPlayers =  session.getNumberOfPlayersInSession();
+        List<Wearable> wearablesToSend = new Wearable().getWearablesForSession(numberOfPlayers);
+
+        WearableColis wearableColis = new WearableColis(wearablesToSend, dateSent, dateReceived, session);
+        return wearableColis;
     }
 
     public List<Wearable> getWearables() {

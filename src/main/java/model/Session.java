@@ -63,4 +63,12 @@ public class Session {
 	public void setStatus(String status) {
 		this.status = status;
 	}
+	
+	public LocalDate getDateToSendWearableColis(){
+		return date.minusDays(3);
+	}
+	
+	public int getNumberOfPlayersInSession(){
+		return players.size();
+	}
 }

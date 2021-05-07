@@ -35,9 +35,8 @@ public class sendWearableTest {
         Session session = this.sessions.findById(sessionId);
 
 
-        SendWearable s = new SendWearable(this.wearableColis);
-        WearableColis w = s.sendWearablesColis(session);
-        System.out.println(w.getWearables());
+        SendWearable s = new SendWearable(this.wearableColis,this.sessions);
+        WearableColis w = s.sendWearablesColis(sessionId);
 
         assertEquals(w.getWearables().get(0).getType(), "TOP");
         assertEquals(w.getWearables().size(), 2);

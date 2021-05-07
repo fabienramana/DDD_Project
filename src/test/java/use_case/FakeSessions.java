@@ -1,5 +1,6 @@
 package use_case;
 
+import java.time.LocalDate;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -18,7 +19,11 @@ public class FakeSessions implements SessionRepository{
 		sessions = new HashMap<>();
 		
 		Session juin = new Session();
-		juin.setDate("01/06/2021");
+		LocalDate date = LocalDate.of(2020,6,8);
+		juin.setDate(date);
+		juin.setStatus("Maintenu");
+		Player zidane = new Player("Zidane", 180,80,"milieu");
+		juin.addPlayer(zidane);
 		sessions.put("1",juin);
 	}
 

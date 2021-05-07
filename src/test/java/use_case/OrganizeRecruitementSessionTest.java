@@ -2,6 +2,7 @@ package use_case;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -41,7 +42,7 @@ public class OrganizeRecruitementSessionTest {
 
         String status = "Maintenu";
 
-		String date = "28/06/2021 12h";
+		LocalDate date = LocalDate.of(2020,1,8);
 		Coach coach = this.coaches.findById(coachId);
 		Scoot scoot = this.scoots.findById(scootId);
 		Player player = this.players.findById(playerId);

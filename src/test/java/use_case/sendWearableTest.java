@@ -27,23 +27,21 @@ public class sendWearableTest {
     }
 
     @Test
-    public void shoudReturnWearable(){
+    public void shoudReturnWearable() throws Exception {
         String sessionId = "1";
         String wearableId = "1";
-        LocalDate dateSent = LocalDate.of(2020, 1, 8);
-        LocalDate dateReceived = LocalDate.of(2020, 1, 15);
+        LocalDate dateSent = LocalDate.of(2020, 6,5 );
         Wearable wearable = this.wearables.findById(wearableId);
         Session session = this.sessions.findById(sessionId);
 
-        List<Wearable> wearables = new ArrayList<>();
-        wearables.add(wearable);
-
-
 
         SendWearable s = new SendWearable(this.wearableColis);
-        WearableColis w = s.sendWearablesColis(wearables, dateSent, dateReceived, session);
+        WearableColis w = s.sendWearablesColis(session);
+        System.out.println(w.getWearables());
 
-        assertEquals(w.getWearables().get(0).getType(), wearable.getType());
+        assertEquals(w.getWearables().get(0).getType(), "TOP");
+        assertEquals(w.getWearables().size(), 2);
+        assertEquals(w.getDateSent(), dateSent);
 
     }
 }

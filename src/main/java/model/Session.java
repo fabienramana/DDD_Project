@@ -6,13 +6,13 @@ import java.util.List;
 
 public class Session {
 	
-	private String date;
+	private LocalDate date;
 	private String status;
 	private List<Player> players;
 	private List<Scoot> scoots;
 	private List<Coach> coaches;
 	
-	public Session(String date, List<Player> players, List<Scoot> scoots, List<Coach> coaches, String status) {
+	public Session(LocalDate date, List<Player> players, List<Scoot> scoots, List<Coach> coaches, String status) {
 		super();
 		this.date = date;
 		this.status = status;
@@ -26,10 +26,10 @@ public class Session {
 		players = new ArrayList<>();
 	}
 	
-	public String getDate() {
+	public LocalDate getDate() {
 		return date;
 	}
-	public void setDate(String date) {
+	public void setDate(LocalDate date) {
 		this.date = date;
 	}
 	public List<Player> getPlayers() {
@@ -38,6 +38,7 @@ public class Session {
 	public void setPlayers(List<Player> players) {
 		this.players = players;
 	}
+	public void addPlayer(Player player){this.players.add(player);}
 
 	public List<Scoot> getScoots() {
 		return scoots;
@@ -54,7 +55,12 @@ public class Session {
 	public void setCoaches(List<Coach> coaches) {
 		this.coaches = coaches;
 	}
-	
-	
 
+	public String getStatus() {
+		return status;
+	}
+
+	public void setStatus(String status) {
+		this.status = status;
+	}
 }
